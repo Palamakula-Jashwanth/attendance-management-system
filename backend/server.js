@@ -2,7 +2,11 @@ const express = require("express");
 const cors = require("cors");
 
 const db = require("./config/db");
+
 const authRoutes = require("./routes/auth");
+const studentRoutes = require("./routes/students");
+const attendanceRoutes = require("./routes/attendance");
+const reportRoutes = require("./routes/reports");
 
 const app = express();
 
@@ -32,6 +36,15 @@ app.get("/teachers", (req, res) => {
 
 // Authentication Routes
 app.use("/api/auth", authRoutes);
+
+// Student Routes
+app.use("/api/students", studentRoutes);
+
+// Attendance Routes
+app.use("/api/attendance", attendanceRoutes);
+
+//reports routes
+app.use("/api/reports", reportRoutes);
 
 const PORT = 5000;
 
