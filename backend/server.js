@@ -7,6 +7,7 @@ const authRoutes = require("./routes/auth");
 const studentRoutes = require("./routes/students");
 const attendanceRoutes = require("./routes/attendance");
 const reportRoutes = require("./routes/reports");
+const holidayRoutes = require("./routes/holidays");
 
 const app = express();
 
@@ -45,6 +46,9 @@ app.use("/api/attendance", attendanceRoutes);
 
 //reports routes
 app.use("/api/reports", reportRoutes);
+
+//holiday routes
+app.use("/api/holidays", holidayRoutes);
 
 const PORT = 5000;
 
